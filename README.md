@@ -1,19 +1,19 @@
 # NodeJS Express ES6 Hello world
 
 > An example hello world app, showing how to build
-a REST API server using express.js and ES6
-and build for production
+> a REST API server using express.js and ES6
+> and build for production
 
 ### Quick start
 
 ```bash
 # setup
-git clone https://github.com/500tech/nodejs-express-es6.git   
-cd nodejs-express-es6  
-npm install  
+git clone https://github.com/500tech/nodejs-express-es6.git
+cd nodejs-express-es6
+npm install
 
 # start the server (starts babel-node with nodemon)
-npm start 
+npm run dev
 
 # open in browser
 http://localhost:3000
