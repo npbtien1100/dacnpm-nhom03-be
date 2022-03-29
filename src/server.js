@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import routes from "./routes/main.routes";
 import productRouter from "./product/productRouter";
 import authRouter from "./auth/auth.router";
+import userRouter from "./users/userRouter";
 
 import passport from "passport";
 import configPassport from "../config/passport";
@@ -31,7 +32,7 @@ const corsOptions = {
 // consts
 const app = express();
 
-//db.sync().then(console.log("Syncing Database Done!"));
+db.sync().then(console.log("Syncing Database Done!"));
 app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
@@ -43,6 +44,7 @@ app.use(passport.initialize());
 app.use("/", routes);
 app.use("/api/products", productRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
 // arrow functions
 const port = process.env.PORT || 5000;
 const server = app.listen(port, () => {
