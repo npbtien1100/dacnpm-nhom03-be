@@ -69,8 +69,8 @@ export default (passport) => {
       },
       async function (accessToken, refreshToken, profile, done) {
         try {
-          console.log("Co chay vao profile!");
           console.log({ profile });
+          const user = profile;
           //   const [user, created] = await findOrCreateAUser(
           //     { email: profile._json.email },
           //     {

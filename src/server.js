@@ -44,7 +44,7 @@ app.use(passport.initialize());
 app.use("/", routes);
 app.use("/api/products", productRouter);
 app.use("/api/auth", authRouter);
-app.use("/api/user", userRouter);
+app.use("/api/users", userRouter);
 // arrow functions
 const port = process.env.PORT || 5000;
 const server = app.listen(port, () => {

@@ -6,7 +6,7 @@ import { createJWT, authenticateByJwt } from "./auth.services";
 const responseAfterAuthorizing = (req, res, next) => {
   const token = createJWT({ id: req.user.id });
   const user = {
-    success: true,
+    error: false,
     user: { id: req.user.id, name: req.user.name, image: req.user.image },
     token: token,
     expiresIn: 10000000,
