@@ -48,9 +48,5 @@
   "devDependencies": {
     "babel": "5.8.29",
     "nodemon": "1.8.0"
-  },
-  "engines": {
-    "node": "16.x",
-    "npm": "6.9.0"
   }
 }
