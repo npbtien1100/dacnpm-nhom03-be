@@ -31,7 +31,7 @@ const corsOptions = {
 // consts
 const app = express();
 
-db.sync().then(console.log("Syncing Database Done!"));
+// db.sync().then(console.log("Syncing Database Done!"));
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(cookieParser());
