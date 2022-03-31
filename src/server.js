@@ -2,13 +2,13 @@
 import express from "express";
 import "dotenv/config";
 import routes from "./routes/main.routes";
-import productRouter from "./product/productRouter";
+// import productRouter from "./product/productRouter";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 
 //DB config
-import db from "../config/db.config";
-import "../config/all.table";
+// import db from "../config/db.config";
+// import "../config/all.table";
 import cors from "cors";
 
 // Passport config
@@ -37,7 +37,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", routes);
-app.use("/api/products", productRouter);
+// app.use("/api/products", productRouter);
 // arrow functions
 const port = process.env.PORT || 5000;
 const server = app.listen(port, () => {
