@@ -11,6 +11,11 @@ import db from "../config/db.config";
 import "../config/all.table";
 import cors from "cors";
 
+// Passport config
+// import passport from "passport";
+// import configPassport from "../config/passport";
+// configPassport(passport);
+
 //set up cors
 const whitelist = ["http://localhost:3000", process.env.URL_WEB];
 const corsOptions = {
