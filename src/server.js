@@ -6,6 +6,16 @@ import productRouter from "./product/productRouter";
 import sellerRouter from "./seller/sellerRouter";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
+import routes from "./routes/main.routes";
+import productRouter from "./product/productRouter";
+import authRouter from "./auth/auth.router";
+import userRouter from "./users/userRouter";
+
+import passport from "passport";
+import configPassport from "../config/passport";
+configPassport(passport);
 
 //DB config
 import db from "../config/db.config";
@@ -35,6 +45,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", routes);
 app.use("/api/products", productRouter);
 app.use("/api/seller", sellerRouter);
+
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(passport.initialize());
+
+app.use("/", routes);
+app.use("/api/products", productRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/users", userRouter);
 // arrow functions
 const port = process.env.PORT || 5000;
 const server = app.listen(port, () => {

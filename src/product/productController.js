@@ -12,11 +12,11 @@ class ProductController extends BaseController {
   }
   async test(req, res, next) {
     try {
-      console.log(this);
       /*  #swagger.tags = ['TST']
           #swagger.description = 'Endpoint testing' */
       const response = {
         name: "aylmao",
+        ...req.user,
       };
       /* #swagger.responses[200] = {
                 schema: { "$ref": "#/definitions/tst" },
