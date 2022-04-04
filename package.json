@@ -21,20 +21,22 @@
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.2",
+    "cloudinary": "^1.29.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
-    "express": "4.13.3",
+    "express": "^4.17.3",
     "express-session": "^1.17.2",
-    "hbs": "~4.0.4",
+    "hbs": "^4.2.0",
     "http-errors": "~1.6.3",
     "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
     "morgan": "~1.9.1",
+    "multer": "^1.4.4",
     "mysql2": "^2.3.3-rc.0",
-    "nodemailer": "^6.7.0",
-    "nodemon": "^2.0.15",
+    "nodemailer": "^6.7.3",
     "npm-run-all": "^4.1.5",
     "passport": "^0.5.2",
     "passport-facebook": "^3.0.0",
@@ -46,7 +48,7 @@
     "sequelize": "^6.7.0"
   },
   "devDependencies": {
-    "babel": "5.8.29",
-    "nodemon": "1.8.0"
+    "babel": "^6.23.0",
+    "nodemon": "^2.0.15"
   }
 }

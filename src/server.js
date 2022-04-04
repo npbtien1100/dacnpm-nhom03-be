@@ -3,8 +3,16 @@ import express from "express";
 import "dotenv/config";
 import routes from "./routes/main.routes";
 import productRouter from "./product/productRouter";
+import sellerRouter from "./seller/sellerRouter";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
+import authRouter from "./auth/auth.router";
+import userRouter from "./user/userRouter";
+import adminRouter from "./admins/adminRouter";
+
+import passport from "passport";
+import configPassport from "../config/passport";
+configPassport(passport);
 
 //DB config
 import db from "../config/db.config";
@@ -38,12 +46,24 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", routes);
 app.use("/api/products", productRouter);
+app.use("/api/seller", sellerRouter);
+
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(passport.initialize());
+
+app.use("/", routes);
+app.use("/api/products", productRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/users", userRouter);
+app.use("/api/admins", adminRouter);
 // arrow functions
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
   // destructuring
   const { address, port } = server.address();
-
   // string interpolation:
   console.log(`Example app listening at http://${address}:${port}`);
 });

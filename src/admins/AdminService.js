@@ -1,43 +1,41 @@
-import User from "./userModel";
+import Admin from "./adminModel";
 import BaseSevice from "../../base/BaseService";
 import autoBind from "auto-bind";
 
-class UserService extends BaseSevice {
+class AdminService extends BaseSevice {
   constructor() {
-    super(User);
+    super(Admin);
     autoBind(this);
   }
 
   async findOneByEmail(email) {
     try {
-      const foundUser = await this.model.findOne({
+      const foundAdmin = await this.model.findOne({
         where: { email: email },
       });
-      return foundUser;
+      return foundAdmin;
     } catch (error) {
       console.error(error);
       throw error;
     }
   }
-  async registerUser(data) {
+  async registerAdmin(data) {
     try {
       await this.model.create({
         email: data.email,
         password: data.password,
         phone: data.phone,
-        name: data.name,
-        mailSecretCode: data.code,
-        image: data.image,
-        registerType: "registered",
+        fullName: data.name,
+        address: data.address,
       });
-      return { message: "Register new user successfully!" };
+      return { message: "Register new admin successfully!" };
     } catch (error) {
       console.error(error);
       return {
-        error: error.message || "Some error occurred while creating User!",
+        error: error.message || "Some error occurred while creating Admin!",
       };
     }
   }
 }
 
-export default UserService;
+export default AdminService;

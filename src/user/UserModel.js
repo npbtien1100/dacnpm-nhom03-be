@@ -8,11 +8,15 @@ User.init(
       type: DataTypes.STRING,
       defaultValue: "",
     },
-    email: {
-      type: DataTypes.STRING,
+    image: {
+      type: DataTypes.STRING(300),
       defaultValue: "",
     },
     password: {
+      type: DataTypes.STRING,
+      defaultValue: "",
+    },
+    email: {
       type: DataTypes.STRING,
       defaultValue: "",
     },
@@ -20,11 +24,24 @@ User.init(
       type: DataTypes.STRING,
       defaultValue: "",
     },
+    isLock: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+    isVerify: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    },
+    mailSecretCode: {
+      type: DataTypes.STRING,
+    },
+    registerType: {
+      type: DataTypes.STRING,
+    },
   },
   {
     sequelize,
-    modelName: "User",
-    paranoid: true,
+    modelName: "user",
   }
 );
 
