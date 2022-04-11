@@ -3,7 +3,7 @@ import { Sequelize } from "sequelize";
 
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
-  port: dbCongif.PORT,
+  port: 14848,
   dialect: dbConfig.dialect,
   pool: {
     max: dbConfig.pool.max,
