@@ -7,6 +7,7 @@ import routes from "./routes/main.routes";
 import productRouter from "./product/productRouter";
 import authRouter from "./auth/auth.router";
 import userRouter from "./users/userRouter";
+import adminRouter from "./admins/adminRouter";
 
 import passport from "passport";
 import configPassport from "../config/passport";
@@ -45,6 +46,7 @@ app.use("/", routes);
 app.use("/api/products", productRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/users", userRouter);
+app.use("/api/admin", adminRouter);
 // arrow functions
 const port = process.env.PORT || 5000;
 const server = app.listen(port, () => {
