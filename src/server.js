@@ -19,7 +19,7 @@ import "../config/all.table";
 import cors from "cors";
 
 //set up cors
-const whitelist = ["http://localhost:3000", process.env.URL_WEB];
+const whitelist = ["http://localhost:3000", process.env.URL_FRONT_END];
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
